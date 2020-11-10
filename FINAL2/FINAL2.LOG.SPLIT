@@ -1,0 +1,840 @@
+1                   J E S 2  J O B  L O G  --  S Y S T E M  2 9 6 4  --  N O D E  S V S C J E S 2        
+0 
+ 17.49.31 JOB02172 ---- WEDNESDAY, 11 DEC 2019 ----
+ 17.49.31 JOB02172  IRR010I  USERID KC03G36  IS ASSIGNED TO THIS JOB.
+ 17.49.33 JOB02172  ICH70001I KC03G36  LAST ACCESS AT 17:48:50 ON WEDNESDAY, DECEMBER 11, 2019
+ 17.49.33 JOB02172  $HASP373 KC03G36A STARTED - INIT 2    - CLASS A        - SYS 2964
+ 17.49.36 JOB02172  -                                      -----TIMINGS (MINS.)------                          -----PAGING COUNTS----
+ 17.49.36 JOB02172  -STEPNAME PROCSTEP    RC   EXCP   CONN       TCB       SRB  CLOCK          SERV  WORKLOAD  PAGE  SWAP   VIO SWAPS
+ 17.49.36 JOB02172  -COBOL    COBOL       00    674    282       .00       .00     .0            80  BATCH        0     0     0     0
+ 17.49.36 JOB02172  -COBOL    LKED        00    216     39       .00       .00     .0            40  BATCH        0     0     0     0
+ 17.49.36 JOB02172  -KC03G36A ENDED.  NAME-                     TOTAL TCB CPU TIME=      .00 TOTAL ELAPSED TIME=    .0
+ 17.49.36 JOB02172  $HASP395 KC03G36A ENDED - RC=0000
+0------ JES2 JOB STATISTICS ------
+-  11 DEC 2019 JOB EXECUTION DATE
+-           12 CARDS READ
+-          846 SYSOUT PRINT RECORDS
+-            0 SYSOUT PUNCH RECORDS
+-           57 SYSOUT SPOOL KBYTES
+-         0.08 MINUTES EXECUTION TIME
+         1 //KC03G36A         JOB                                                  JOB02172
+         2 //COBOL            EXEC PROC=IGYWCL,REGION=50M,                                 
+           //    PARM.COBOL='TEST,RENT,APOST,OBJECT,NODYNAM,LIB,SIZE(2097152)'             
+         3 XXIGYWCL PROC  LNGPRFX='IGY620',                                        00010000
+           XX             LIBPRFX='CEE',                                           00020000
+           XX             PGMLIB='&&GOSET',GOPGM=GO                                00030000
+           XX*                                                                     00040000
+           XX********************************************************************* 00050000
+           XX*                                                                   * 00060000
+           XX*  Enterprise COBOL for z/OS                                        * 00070000
+           XX*               Version 5 Release 2 Modification 0                  * 00080000
+           XX*                                                                   * 00090000
+           XX*  LICENSED MATERIALS - PROPERTY OF IBM.                            * 00100000
+           XX*                                                                   * 00110000
+           XX*  5655-W32 COPYRIGHT IBM CORP. 1983, 2015                          * 00120000
+           XX*  ALL RIGHTS RESERVED                                              * 00130000
+           XX*                                                                   * 00140000
+           XX*  US GOVERNMENT USERS RESTRICTED RIGHTS - USE,                     * 00150000
+           XX*  DUPLICATION OR DISCLOSURE RESTRICTED BY GSA                      * 00160000
+           XX*  ADP SCHEDULE CONTRACT WITH IBM CORP.                             * 00170000
+           XX*                                                                   * 00180000
+           XX********************************************************************* 00190000
+           XX*                                                                     00200000
+           XX*  COMPILE AND LINK EDIT A COBOL PROGRAM                              00210000
+           XX*                                                                     00220000
+           XX*  PARAMETER  DEFAULT VALUE    USAGE                                  00230000
+           XX*   LNGPRFX   IGY.V5R2M0       PREFIX FOR LANGUAGE DATA SET NAMES     00240000
+           XX*   LIBPRFX   CEE              PREFIX FOR LIBRARY DATA SET NAMES      00250000
+           XX*   PGMLIB    &&GOSET          DATA SET NAME FOR LOAD MODULE          00260000
+           XX*   GOPGM     GO               MEMBER NAME FOR LOAD MODULE            00270000
+           XX*                                                                     00280000
+           XX*  CALLER MUST SUPPLY //COBOL.SYSIN DD ...                            00290000
+           XX*                                                                     00300000
+           XX*  CALLER MUST ALSO SUPPLY //COBOL.SYSLIB DD ... for COPY statements  00310000
+           XX*                                                                     00320000
+         4 XXCOBOL  EXEC PGM=IGYCRCTL,REGION=0M                                    00330000
+         5 //COBOL.STEPLIB DD DSN=IGY420.SIGYCOMP,                                         
+           //    DISP=SHR                                                                  
+           X/STEPLIB  DD  DSNAME=&LNGPRFX..SIGYCOMP,DISP=SHR                       00340000
+           IEFC653I SUBSTITUTION JCL - DSNAME=IGY620.SIGYCOMP,DISP=SHR
+         6 XX         DD  DSNAME=&LIBPRFX..SCEERUN,DISP=SHR                        00350000
+           IEFC653I SUBSTITUTION JCL - DSNAME=CEE.SCEERUN,DISP=SHR
+         7 XX         DD  DSNAME=&LIBPRFX..SCEERUN2,DISP=SHR                       00360000
+           IEFC653I SUBSTITUTION JCL - DSNAME=CEE.SCEERUN2,DISP=SHR
+         8 XXSYSPRINT DD  SYSOUT=*                                                 00370000
+         9 XXSYSLIN   DD  DSNAME=&&LOADSET,UNIT=SYSALLDA,                          00380000
+           XX             DISP=(MOD,PASS),SPACE=(CYL,(1,1))                        00390000
+        10 XXSYSUT1   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00400000
+        11 XXSYSUT2   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00410000
+        12 XXSYSUT3   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00420000
+        13 XXSYSUT4   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00430000
+        14 XXSYSUT5   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00440000
+        15 XXSYSUT6   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00450000
+        16 XXSYSUT7   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00460000
+        17 XXSYSUT8   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00470000
+        18 XXSYSUT9   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00480000
+        19 XXSYSUT10  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00490000
+        20 XXSYSUT11  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00500000
+        21 XXSYSUT12  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00510000
+        22 XXSYSUT13  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00520000
+        23 XXSYSUT14  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00530000
+        24 XXSYSUT15  DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00540000
+        25 XXSYSMDECK DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00550000
+        26 //COBOL.SYSIN DD DSN=KC03G36.FINAL2.COBOL(SPLIT),DISP=SHR                       
+        27 XXLKED   EXEC PGM=IEWBLINK,COND=(8,LT,COBOL),REGION=0M                  00560000
+        28 XXSYSLIB   DD  DSNAME=&LIBPRFX..SCEELKED,DISP=SHR                       00570000
+           IEFC653I SUBSTITUTION JCL - DSNAME=CEE.SCEELKED,DISP=SHR
+        29 XX         DD  DSNAME=&LIBPRFX..SCEELKEX,DISP=SHR                       00580000
+           IEFC653I SUBSTITUTION JCL - DSNAME=CEE.SCEELKEX,DISP=SHR
+        30 XXSYSPRINT DD  SYSOUT=*                                                 00590000
+        31 XXSYSLIN   DD  DSNAME=&&LOADSET,DISP=(OLD,DELETE)                       00600000
+        32 XX         DD  DDNAME=SYSIN                                             00610000
+        33 //LKED.SYSLMOD DD DSN=KC03G36.COBOL.LOADLIB(F2SPLIT),                           
+           //    DISP=OLD                                                                  
+           X/SYSLMOD  DD  DSNAME=&PGMLIB(&GOPGM),                                  00620000
+           X/             SPACE=(CYL,(1,1,1)),                                     00630000
+           X/             UNIT=SYSALLDA,DISP=(MOD,PASS),DSNTYPE=LIBRARY            00640000
+           IEFC653I SUBSTITUTION JCL - DSNAME=&&GOSET(GO),SPACE=(CYL,(1,1,1)),UNIT=SYSALLDA,DISP=(MOD,PASS),
+           DSNTYPE=LIBRARY
+        34 XXSYSUT1   DD  UNIT=SYSALLDA,SPACE=(CYL,(1,1))                          00650000
+           /* DECLARE DATASET THAT CONTAINS SOURCE CODE                                    
+           /*                                                                              
+           /* DECLARE PDS MEMBER TO STORE LOAD MODULE                                      
+        35 //SYSIN     DD *               GENERATED STATEMENT                              
+  STMT NO. MESSAGE
+         2 IEFC001I PROCEDURE IGYWCL WAS EXPANDED USING SYSTEM LIBRARY VENDOR.PROCLIB
+ ICH70001I KC03G36  LAST ACCESS AT 17:48:50 ON WEDNESDAY, DECEMBER 11, 2019
+ IEFA111I KC03G36A IS USING THE FOLLOWING JOB RELATED SETTINGS:
+          SWA=ABOVE,TIOT SIZE=32K,DSENQSHR=DISALLOW,GDGBIAS=JOB
+ IEF236I ALLOC. FOR KC03G36A COBOL COBOL
+ IEF237I 185A ALLOCATED TO STEPLIB
+ IEF237I 1001 ALLOCATED TO 
+ IEF237I 1001 ALLOCATED TO 
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IGD101I SMS ALLOCATED TO DDNAME (SYSLIN  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.LOADSET.H01 )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT1  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164113    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT2  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164114    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT3  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164115    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT4  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164116    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT5  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164117    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT6  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164118    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT7  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164119    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT8  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164120    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT9  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164121    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT10 )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164122    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT11 )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164123    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT12 )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164124    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT13 )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164125    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT14 )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164126    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT15 )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164127    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD101I SMS ALLOCATED TO DDNAME (SYSMDECK)
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164128    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IGD103I SMS ALLOCATED TO DDNAME SYSIN
+ IEF142I KC03G36A COBOL COBOL - STEP WAS EXECUTED - COND CODE 0000
+ IEF285I   IGY420.SIGYCOMP                              KEPT          
+ IEF285I   VOL SER NOS= VTIGYG.                            
+ IEF285I   CEE.SCEERUN                                  KEPT          
+ IEF285I   VOL SER NOS= VTMVSC.                            
+ IEF285I   CEE.SCEERUN2                                 KEPT          
+ IEF285I   VOL SER NOS= VTMVSC.                            
+ IEF285I   KC03G36.KC03G36A.JOB02172.D0000102.?         SYSOUT        
+ IGD106I SYS19345.T174931.RA000.KC03G36A.LOADSET.H01  PASSED,    DDNAME=SYSLIN  
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164113     DELETED,   DDNAME=SYSUT1  
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164114     DELETED,   DDNAME=SYSUT2  
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164115     DELETED,   DDNAME=SYSUT3  
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164116     DELETED,   DDNAME=SYSUT4  
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164117     DELETED,   DDNAME=SYSUT5  
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164118     DELETED,   DDNAME=SYSUT6  
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164119     DELETED,   DDNAME=SYSUT7  
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164120     DELETED,   DDNAME=SYSUT8  
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164121     DELETED,   DDNAME=SYSUT9  
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164122     DELETED,   DDNAME=SYSUT10 
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164123     DELETED,   DDNAME=SYSUT11 
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164124     DELETED,   DDNAME=SYSUT12 
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164125     DELETED,   DDNAME=SYSUT13 
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164126     DELETED,   DDNAME=SYSUT14 
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164127     DELETED,   DDNAME=SYSUT15 
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164128     DELETED,   DDNAME=SYSMDECK
+ IGD104I KC03G36.FINAL2.COBOL                         RETAINED,  DDNAME=SYSIN   
+ IEF373I STEP/COBOL   /START 2019345.1749
+ IEF032I STEP/COBOL   /STOP  2019345.1749 
+         CPU:     0 HR  00 MIN  00.01 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+         VIRT:   284K  SYS:   264K  EXT:     2036K  SYS:    12316K
+         ATB- REAL:                  4152K  SLOTS:                     0K
+              VIRT- ALLOC:      17M SHRD:       0M
+ IEF236I ALLOC. FOR KC03G36A LKED COBOL
+ IEF237I 1001 ALLOCATED TO SYSLIB
+ IEF237I 1001 ALLOCATED TO 
+ IEF237I JES2 ALLOCATED TO SYSPRINT
+ IGD103I SMS ALLOCATED TO DDNAME SYSLIN
+ IEF237I JES2 ALLOCATED TO 
+ IGD103I SMS ALLOCATED TO DDNAME SYSLMOD
+ IGD101I SMS ALLOCATED TO DDNAME (SYSUT1  )
+         DSN (SYS19345.T174931.RA000.KC03G36A.R0164129    )
+         STORCLAS (TEMPSC) MGMTCLAS (        ) DATACLAS (        )
+         VOL SER NOS= TEMP00                                                                
+ IEF142I KC03G36A LKED COBOL - STEP WAS EXECUTED - COND CODE 0000
+ IEF285I   CEE.SCEELKED                                 KEPT          
+ IEF285I   VOL SER NOS= VTMVSC.                            
+ IEF285I   CEE.SCEELKEX                                 KEPT          
+ IEF285I   VOL SER NOS= VTMVSC.                            
+ IEF285I   KC03G36.KC03G36A.JOB02172.D0000103.?         SYSOUT        
+ IGD105I SYS19345.T174931.RA000.KC03G36A.LOADSET.H01  DELETED,   DDNAME=SYSLIN  
+ IEF285I   KC03G36.KC03G36A.JOB02172.D0000101.?         SYSIN         
+ IGD104I KC03G36.COBOL.LOADLIB                        RETAINED,  DDNAME=SYSLMOD 
+ IGD105I SYS19345.T174931.RA000.KC03G36A.R0164129     DELETED,   DDNAME=SYSUT1  
+ IEF373I STEP/LKED    /START 2019345.1749
+ IEF032I STEP/LKED    /STOP  2019345.1749 
+         CPU:     0 HR  00 MIN  00.01 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+         VIRT:    88K  SYS:   248K  EXT:     1768K  SYS:    12360K
+         ATB- REAL:                  4152K  SLOTS:                     0K
+              VIRT- ALLOC:      17M SHRD:       0M
+ IEF375I  JOB/KC03G36A/START 2019345.1749
+ IEF033I  JOB/KC03G36A/STOP  2019345.1749 
+         CPU:     0 HR  00 MIN  00.02 SEC    SRB:     0 HR  00 MIN  00.00 SEC    
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0                         Date 12/11/2019  Time 17:49:34   Page     1                
+0Invocation parameters:                                                                                                              
+  TEST,RENT,APOST,OBJECT,NODYNAM,LIB,SIZE(2097152)                                                                                   
+0Options in effect:                                                                                                                  
+  NOADATA                                                                                                                            
+    ADV                                                                                                                              
+    APOST                                                                                                                            
+    ARITH(COMPAT)                                                                                                                    
+  NOAWO                                                                                                                              
+  NOBLOCK0                                                                                                                           
+    BUFSIZE(4096)                                                                                                                    
+  NOCICS                                                                                                                             
+    CODEPAGE(1140)                                                                                                                   
+  NOCOMPILE(S)                                                                                                                       
+  NOCURRENCY                                                                                                                         
+    DATA(31)                                                                                                                         
+  NODATEPROC                                                                                                                         
+    DBCS                                                                                                                             
+  NODECK                                                                                                                             
+  NODIAGTRUNC                                                                                                                        
+  NODLL                                                                                                                              
+  NODUMP                                                                                                                             
+  NODYNAM                                                                                                                            
+  NOEXIT                                                                                                                             
+  NOEXPORTALL                                                                                                                        
+  NOFASTSRT                                                                                                                          
+    FLAG(I,I)                                                                                                                        
+  NOFLAGMIG4                                                                                                                         
+  NOFLAGSTD                                                                                                                          
+    INTDATE(ANSI)                                                                                                                    
+    LANGUAGE(EN)                                                                                                                     
+    LIB                                                                                                                              
+    LINECOUNT(60)                                                                                                                    
+  NOLIST                                                                                                                             
+  NOMAP                                                                                                                              
+  NOMDECK                                                                                                                            
+  NONAME                                                                                                                             
+    NSYMBOL(NATIONAL)                                                                                                                
+  NONUMBER                                                                                                                           
+    NUMPROC(NOPFD)                                                                                                                   
+    OBJECT                                                                                                                           
+  NOOFFSET                                                                                                                           
+  NOOPTIMIZE                                                                                                                         
+    OUTDD(SYSOUT)                                                                                                                    
+    PGMNAME(COMPAT)                                                                                                                  
+    RENT                                                                                                                             
+    RMODE(AUTO)                                                                                                                      
+    SEQUENCE                                                                                                                         
+    SIZE(2097152)                                                                                                                    
+    SOURCE                                                                                                                           
+    SPACE(1)                                                                                                                         
+  NOSQL                                                                                                                              
+    SQLCCSID                                                                                                                         
+  NOSSRANGE                                                                                                                          
+  NOTERM                                                                                                                             
+    TEST(HOOK,NOSEPARATE,NOEJPD)                                                                                                     
+  NOTHREAD                                                                                                                           
+    TRUNC(STD)                                                                                                                       
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0                         Date 12/11/2019  Time 17:49:34   Page     2                
+0 NOVBREF                                                                                                                            
+  NOWORD                                                                                                                             
+    XMLPARSE(XMLSS)                                                                                                                  
+    XREF(FULL)                                                                                                                       
+  NOZONECHECK                                                                                                                        
+    YEARWINDOW(1900)                                                                                                                 
+    ZWB                                                                                                                              
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               SPLIT     Date 12/11/2019  Time 17:49:34   Page     3                
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference           
+0/* SPLIT                                                                                                                            
+   000001               * Copy the KC02708.FINAL1.COBOL data set to your userid KC03XXX                                              
+   000002               *                                                                                                            
+   000003               * For each program in your solution:                                                                         
+   000004               * - Copy the EMPTY.cbl member to an appropriate name                                                         
+   000005               *      for your solution                                                                                     
+   000006               * - Copy your COBOL source file on your PC                                                                   
+   000007               * - Paste source into this file                                                                              
+   000008               * - Save                                                                                                     
+   000009               *                                                                                                            
+   000010                                                                                                                            
+   000011                identification division.                                                                                    
+   000012                program-id. SPLIT.                                                                                          
+   000013                author. Jared Howie.                                                                                        
+   000014                environment division.                                                                                       
+   000015                input-output section.                                                                                       
+   000016                file-control.                                                                                               
+   000017                    select sales-file  assign to VALIDDAT                                 58                                
+   000018                             organization is sequential.                                                                    
+   000019                                                                                                                            
+   000020                    select totals-report ASSIGN TO CONT                                   74                                
+   000021                        ORGANIZATION IS SEQUENTIAL.                                                                         
+   000022                                                                                                                            
+   000023                    select s-data ASSIGN TO SREC                                          34                                
+   000024                        ORGANIZATION IS SEQUENTIAL.                                                                         
+   000025                                                                                                                            
+   000026                    select l-data ASSIGN TO LREC                                          42                                
+   000027                        ORGANIZATION IS SEQUENTIAL.                                                                         
+   000028                                                                                                                            
+   000029                    select r-data ASSIGN TO RETUR                                         51                                
+   000030                        ORGANIZATION IS SEQUENTIAL.                                                                         
+   000031                data division.                                                                                              
+   000032                file section.                                                                                               
+   000033                                                                                                                            
+   000034                fd s-data                                                                                                   
+   000035                    RECORDING MODE IS F                                                                                     
+   000036                    data record is s-dat                                                  *                                 
+   000037                    record contains 36 characters.                                                                          
+   000038                                                                                                                            
+   000039                01 s-dat.                                                                                                   
+   000040                    05 s-raw-data          pic x(36).                                                                       
+   000041                                                                                                                            
+   000042                fd l-data                                                                                                   
+   000043                    RECORDING MODE IS F                                                                                     
+   000044                    data record is l-dat                                                  *                                 
+   000045                    record contains 36 characters.                                                                          
+   000046                                                                                                                            
+   000047                01 l-dat.                                                                                                   
+   000048                    05 l-raw-data          pic x(36).                                                                       
+   000049                                                                                                                            
+   000050                                                                                                                            
+   000051                fd r-data                                                                                                   
+   000052                    RECORDING MODE IS F                                                                                     
+   000053                    data record is r-data-record                                          *                                 
+   000054                    record contains 36 characters.                                                                          
+   000055                                                                                                                            
+   000056                01 r-data-record.                                                                                           
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               SPLIT     Date 12/11/2019  Time 17:49:34   Page     4                
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference           
+0  000057                    05 r-raw-data          pic x(36).                                                                       
+   000058                fd  sales-file                                                                                              
+   000059                    RECORDING MODE IS F                                                                                     
+   000060                    data record is sales-rec                                              *                                 
+   000061                    record contains 36 characters.                                                                          
+   000062                                                                                                                            
+   000063                01  sales-rec.                                                                                              
+   000064                    05 sr-trans-code     pic x.                                                                             
+   000065                    05 sr-trans-amt      pic 9(5)v99.                                                                       
+   000066                    05 sr-pay-type       pic xx.                                                                            
+   000067                    05 sr-store-num      pic 99.                                                                            
+   000068                    05 sr-inv-num-x1    pic x.                                                                              
+   000069                    05 sr-inv-num-x2    pic x.                                                                              
+   000070                    05 sr-inv-num-dash  pic x.                                                                              
+   000071                    05 sr-inv-num       pic 9(6).                                                                           
+   000072                    05 sr-sku-num       pic 9(15).                                                                          
+   000073                                                                                                                            
+   000074                fd  totals-report                                                                                           
+   000075                    RECORDING MODE IS F                                                                                     
+   000076                    data record is totals-rpt                                             *                                 
+   000077                    record contains 71 characters.                                                                          
+   000078                                                                                                                            
+   000079                01 totals-rpt.                                                                                              
+   000080                                                                                                                            
+   000081                    05 tr-heading       pic x(28).                                                                          
+   000082                    05 filler           pic x(5).                                                                           
+   000083                    05 tr-count-heading pic x(7).                                                                           
+   000084                    05 tr-count         pic z9.                                                                             
+   000085                    05 filler           pic x(5).                                                                           
+   000086                    05 tr-amount-heading pic x(14).                                                                         
+   000087                    05 tr-amount         pic zzzzz9.99.                                                                     
+   000088                    05 tr-percent-sign   pic x.                                                                             
+   000089                                                                                                                            
+   000090                working-storage section.                                                                                    
+   000091                01  sw-eof                pic x value 'n'.                                                                  
+   000092                                                                                                                            
+   000093                77 ws-s-and-l-count       pic 99 value 0.                                                                   
+   000094                77 ws-s-and-l-total-amt   pic 9(6)v99 value 0.                                                              
+   000095                77 ws-s-count             pic 99 value 0.                                                                   
+   000096                77 ws-s-total-amt         pic 9(6)v99 value 0.                                                              
+   000097                77 ws-l-count             pic 99 value 0.                                                                   
+   000098                77 ws-l-total-amt         pic 9(6)v99 value 0.                                                              
+   000099                77 ws-r-count             pic 99 value 0.                                                                   
+   000100                77 ws-r-total-amt         pic 9(6)v99 value 0.                                                              
+   000101                77 ws-cash-count          pic 99 value 0.                                                                   
+   000102                77 ws-debit-count         pic 99 value 0.                                                                   
+   000103                77 ws-credit-count        pic 99 value 0.                                                                   
+   000104                77 ws-cheque-count        pic 99 value 0.                                                                   
+   000105                77 ws-record-count        pic 99 value 0.                                                                   
+   000106                77 ws-counter             pic 9 value 0.                                                                    
+   000107                77 ws-temp-for-calc       pic 99v99 value 0.                                                                
+   000108                01 store-totals1.                                                                                           
+   000109                    05  store-totals      pic  9(6)v99                                                                      
+   000110                         occurs 6 times.                                                                                    
+   000111                                                                                                                            
+   000112                01 r-store-totals1.                                                                                         
+   000113                   05 r-store-totals      pic  9(6)v99 value 0                                                              
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               SPLIT     Date 12/11/2019  Time 17:49:34   Page     5                
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference           
+0  000114                    occurs 6 times.                                                                                         
+   000115                                                                                                                            
+   000116                procedure division.                                                                                         
+   000117                000-main.                                                                                                   
+   000118                    open input sales-file,                                                58                                
+   000119                         output totals-report s-data, l-data, r-data.                     74 34 42 51                       
+   000120                                                                                                                            
+   000121                    read sales-file at end move 'y' to sw-eof.                            58 91                             
+   000122                                                                                                                            
+   000123                                                                                                                            
+   000124                                                                                                                            
+   000125                                                                                                                            
+   000126                    perform 100-process-file until sw-eof = 'y'.                          133 91                            
+   000127                                                                                                                            
+   000128                                                                                                                            
+   000129                    perform 200-print-totals.                                             197                               
+   000130                    close sales-file, totals-report, s-data, l-data, r-data.              58 74 34 42 51                    
+   000131                    goback.                                                                                                 
+   000132                                                                                                                            
+   000133                100-process-file.                                                                                           
+   000134                    if(sr-trans-code = 'S') then                                          64                                
+   000135      1                 add 1 to ws-record-count                                          105                               
+   000136                                                                                                                            
+   000137      1                 add 1 to ws-s-and-l-count                                         93                                
+   000138      1                 add 1 to ws-s-count                                               95                                
+   000139      1                 add sr-trans-amt to ws-s-and-l-total-amt                          65 94                             
+   000140      1                 add sr-trans-amt to ws-s-total-amt                                65 96                             
+   000141      1                 move sales-rec to s-dat                                           63 39                             
+   000142      1                 write s-dat                                                       39                                
+   000143      1                 perform 150-process-store-total                                   183                               
+   000144      1             else if(sr-trans-code = 'L') then                                     64                                
+   000145      2                 add 1 to ws-s-and-l-count                                         93                                
+   000146      2                 add 1 to ws-l-count                                               97                                
+   000147      2                 add 1 to ws-record-count                                          105                               
+   000148      2                 add sr-trans-amt to ws-s-and-l-total-amt                          65 94                             
+   000149      2                 add sr-trans-amt to ws-l-total-amt                                65 98                             
+   000150      2                 move sales-rec to l-dat                                           63 47                             
+   000151      2                 write l-dat                                                       47                                
+   000152      2                 perform 150-process-store-total                                   183                               
+   000153      2             else if(sr-trans-code = 'R')                                          64                                
+   000154                                                                                                                            
+   000155      3                 add 1 to ws-r-count                                               99                                
+   000156      3                 add sr-trans-amt to ws-r-total-amt                                65 100                            
+   000157      3                 move sales-rec to r-data-record                                   63 56                             
+   000158      3                 write r-data-record                                               56                                
+   000159      3                 if(sr-store-num = 01)then                                         67                                
+   000160      4                 add sr-trans-amt to r-store-totals(1)                             65 113                            
+   000161      4             else if(sr-store-num = 02)then                                        67                                
+   000162      5                 add sr-trans-amt to r-store-totals(2)                             65 113                            
+   000163      5             else if(sr-store-num = 03)then                                        67                                
+   000164      6                 add sr-trans-amt to r-store-totals(3)                             65 113                            
+   000165      6             else if(sr-store-num = 04)then                                        67                                
+   000166      7                 add sr-trans-amt to r-store-totals(4)                             65 113                            
+   000167      7             else if(sr-store-num = 05)then                                        67                                
+   000168      8                 add sr-trans-amt to r-store-totals(5)                             65 113                            
+   000169      8             else if(sr-store-num = 12)then                                        67                                
+   000170      9                 add sr-trans-amt to r-store-totals(6)                             65 113                            
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               SPLIT     Date 12/11/2019  Time 17:49:34   Page     6                
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference           
+0  000171      8             end-if                                                                                                  
+   000172      7             end-if.                                                                                                 
+   000173                    if(sr-pay-type = 'CA')then                                            66                                
+   000174      1                 add 1 to ws-cash-count                                            101                               
+   000175      1             else if (sr-pay-type = 'CR')then                                      66                                
+   000176      2                 add 1 to ws-credit-count                                          103                               
+   000177      2             else if(sr-pay-type = 'DB') then                                      66                                
+   000178      3                 add 1 to ws-debit-count                                           102                               
+   000179      2             end-if.                                                                                                 
+   000180                    move spaces to sales-rec.                                             IMP 63                            
+   000181                     read sales-file at end move 'y' to sw-eof.                           58 91                             
+   000182                                                                                                                            
+   000183                150-process-store-total.                                                                                    
+   000184                    if(sr-store-num = 01)then                                             67                                
+   000185      1                 add sr-trans-amt to store-totals(1)                               65 109                            
+   000186      1             else if(sr-store-num = 02)then                                        67                                
+   000187      2                 add sr-trans-amt to store-totals(2)                               65 109                            
+   000188      2             else if(sr-store-num = 03)then                                        67                                
+   000189      3                 add sr-trans-amt to store-totals(3)                               65 109                            
+   000190      3             else if(sr-store-num = 04)then                                        67                                
+   000191      4                 add sr-trans-amt to store-totals(4)                               65 109                            
+   000192      4             else if(sr-store-num = 05)then                                        67                                
+   000193      5                 add sr-trans-amt to store-totals(5)                               65 109                            
+   000194      5             else if(sr-store-num = 12)then                                        67                                
+   000195      6                 add sr-trans-amt to store-totals(6)                               65 109                            
+   000196      5             end-if.                                                                                                 
+   000197                200-print-totals.                                                                                           
+   000198                    move "S&L Records(Combined):" to tr-heading.                          81                                
+   000199                    move ws-s-and-l-count to tr-count.                                    93 84                             
+   000200                    move ws-s-and-l-total-amt to tr-amount.                               94 87                             
+   000201                    move "Count: "        to tr-count-heading.                            83                                
+   000202                    move "Total Amount: " to tr-amount-heading.                           86                                
+   000203                                                                                                                            
+   000204                    write totals-rpt.                                                     79                                
+   000205                    move spaces to totals-rpt.                                            IMP 79                            
+   000206                    write totals-rpt.                                                     79                                
+   000207                                                                                                                            
+   000208                    move "S Records:" to tr-heading.                                      81                                
+   000209                    move "Count: "        to tr-count-heading.                            83                                
+   000210                    move "Total Amount: " to tr-amount-heading.                           86                                
+   000211                    move ws-s-count to tr-count.                                          95 84                             
+   000212                    move ws-s-total-amt to tr-amount.                                     96 87                             
+   000213                    write totals-rpt.                                                     79                                
+   000214                    move spaces to totals-rpt.                                            IMP 79                            
+   000215                    write totals-rpt.                                                     79                                
+   000216                                                                                                                            
+   000217                    move "L Records:" to tr-heading.                                      81                                
+   000218                    move "Count: "        to tr-count-heading.                            83                                
+   000219                    move "Total Amount: " to tr-amount-heading.                           86                                
+   000220                    move ws-l-count to tr-count.                                          97 84                             
+   000221                    move ws-l-total-amt to tr-amount.                                     98 87                             
+   000222                    write totals-rpt.                                                     79                                
+   000223                    move spaces to totals-rpt.                                            IMP 79                            
+   000224                    write totals-rpt.                                                     79                                
+   000225                                                                                                                            
+   000226                    move spaces to totals-rpt.                                            IMP 79                            
+   000227                    move "Store Total For S&L Records:" to tr-heading.                    81                                
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               SPLIT     Date 12/11/2019  Time 17:49:34   Page     7                
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference           
+0  000228                    move "Total Amount: " to tr-amount-heading.                           86                                
+   000229                    perform varying ws-counter from 1 by 1 until ws-counter > 6           106 106                           
+   000230      1             move "Store #:" to tr-count-heading                                   83                                
+   000231      1             if(ws-counter = 6)then                                                106                               
+   000232      2                 move 12 to tr-count                                               84                                
+   000233      1             else                                                                                                    
+   000234      2                 move ws-counter to tr-count                                       106 84                            
+   000235      1             end-if                                                                                                  
+   000236      1             move store-totals(ws-counter) to tr-amount                            109 106 87                        
+   000237      1             write totals-rpt                                                      79                                
+   000238      1             move spaces to tr-heading                                             IMP 81                            
+   000239                    end-perform.                                                                                            
+   000240                    move spaces to totals-rpt.                                            IMP 79                            
+   000241                    write totals-rpt.                                                     79                                
+   000242                                                                                                                            
+   000243                    move spaces to totals-rpt.                                            IMP 79                            
+   000244                    move "Percent Cash" to tr-heading                                     81                                
+   000245                    divide ws-cash-count by ws-record-count                               101 105                           
+   000246                      giving ws-temp-for-calc rounded.                                    107                               
+   000247                    multiply ws-temp-for-calc by 100 giving tr-amount rounded.            107 87                            
+   000248                    move '%' to tr-percent-sign.                                          88                                
+   000249                    move 0 to ws-temp-for-calc.                                           107                               
+   000250                    write totals-rpt.                                                     79                                
+   000251                                                                                                                            
+   000252                    move spaces to totals-rpt.                                            IMP 79                            
+   000253                    move "Percent Credit" to tr-heading                                   81                                
+   000254                    divide ws-credit-count by ws-record-count                             103 105                           
+   000255                      giving ws-temp-for-calc rounded.                                    107                               
+   000256                    multiply ws-temp-for-calc by 100 giving tr-amount rounded.            107 87                            
+   000257                    move '%' to tr-percent-sign.                                          88                                
+   000258                    move 0 to ws-temp-for-calc.                                           107                               
+   000259                    write totals-rpt.                                                     79                                
+   000260                                                                                                                            
+   000261                    move spaces to totals-rpt.                                            IMP 79                            
+   000262                    move "Percent Debit" to tr-heading                                    81                                
+   000263                    divide ws-debit-count by ws-record-count                              102 105                           
+   000264                      giving ws-temp-for-calc rounded.                                    107                               
+   000265                    multiply ws-temp-for-calc by 100 giving tr-amount rounded.            107 87                            
+   000266                    move '%' to tr-percent-sign.                                          88                                
+   000267                    write totals-rpt.                                                     79                                
+   000268                    move spaces to totals-rpt.                                            IMP 79                            
+   000269                    write totals-rpt.                                                     79                                
+   000270                    move spaces to totals-rpt.                                            IMP 79                            
+   000271                                                                                                                            
+   000272                    move "R Records:" to tr-heading.                                      81                                
+   000273                    move "Count:" to tr-count-heading.                                    83                                
+   000274                    move "Total Amount: " to tr-amount-heading.                           86                                
+   000275                    move ws-r-count to tr-count.                                          99 84                             
+   000276                    move ws-r-total-amt to tr-amount.                                     100 87                            
+   000277                    write totals-rpt.                                                     79                                
+   000278                    move spaces to totals-rpt.                                            IMP 79                            
+   000279                    write totals-rpt.                                                     79                                
+   000280                                                                                                                            
+   000281                    move "Store Total For R Records:" to tr-heading.                      81                                
+   000282                    move "Store #:" to tr-count-heading.                                  83                                
+   000283                    move "Total Amount: " to tr-amount-heading.                           86                                
+   000284                    perform varying ws-counter from 1 by 1 until ws-counter > 6           106 106                           
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               SPLIT     Date 12/11/2019  Time 17:49:34   Page     8                
+   LineID  PL SL  ----+-*A-1-B--+----2----+----3----+----4----+----5----+----6----+----7-|--+----8 Map and Cross Reference           
+0  000285      1             if(ws-counter = 6)then                                                106                               
+   000286      2                 move 12 to tr-count                                               84                                
+   000287      1             else                                                                                                    
+   000288      2                 move ws-counter to tr-count                                       106 84                            
+   000289      1             end-if                                                                                                  
+   000290      1             move r-store-totals(ws-counter) to tr-amount                          113 106 87                        
+   000291      1             write totals-rpt                                                      79                                
+   000292      1             move spaces to tr-heading                                             IMP 81                            
+   000293                    end-perform.                                                                                            
+   000294                    move spaces to totals-rpt.                                            IMP 79                            
+   000295                    write totals-rpt.                                                     79                                
+   000296                                                                                                                            
+   000297                    move "Grand Total Amount:" to tr-heading.                             81                                
+   000298                    subtract ws-r-total-amt from ws-s-and-l-total-amt                     100 94                            
+   000299                    giving tr-amount.                                                     87                                
+   000300                    write totals-rpt.                                                     79                                
+   000301                end program SPLIT.                                                        12                                
+ */ SPLIT                                                                                                                            
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               SPLIT     Date 12/11/2019  Time 17:49:34   Page     9                
+0An "M" preceding a data-name reference indicates that the data-name is modified by this reference.                                  
+                                                                                                                                     
+  Defined   Cross-reference of data names   References                                                                               
+                                                                                                                                     
+       47   L-DAT. . . . . . . . . . . . .  M150 151                                                                                 
+       42   L-DATA . . . . . . . . . . . .  26 119 130                                                                               
+       48   L-RAW-DATA                                                                                                               
+       51   R-DATA . . . . . . . . . . . .  29 119 130                                                                               
+       56   R-DATA-RECORD. . . . . . . . .  M157 158                                                                                 
+       57   R-RAW-DATA                                                                                                               
+      113   R-STORE-TOTALS . . . . . . . .  M160 M162 M164 M166 M168 M170 290                                                        
+      112   R-STORE-TOTALS1                                                                                                          
+       39   S-DAT. . . . . . . . . . . . .  M141 142                                                                                 
+       34   S-DATA . . . . . . . . . . . .  23 119 130                                                                               
+       40   S-RAW-DATA                                                                                                               
+       58   SALES-FILE . . . . . . . . . .  17 118 121 130 181                                                                       
+       63   SALES-REC. . . . . . . . . . .  141 150 157 M180                                                                         
+       71   SR-INV-NUM                                                                                                               
+       70   SR-INV-NUM-DASH                                                                                                          
+       68   SR-INV-NUM-X1                                                                                                            
+       69   SR-INV-NUM-X2                                                                                                            
+       66   SR-PAY-TYPE. . . . . . . . . .  173 175 177                                                                              
+       72   SR-SKU-NUM                                                                                                               
+       67   SR-STORE-NUM . . . . . . . . .  159 161 163 165 167 169 184 186 188 190 192 194                                          
+       65   SR-TRANS-AMT . . . . . . . . .  139 140 148 149 156 160 162 164 166 168 170 185 187 189 191 193 195                      
+       64   SR-TRANS-CODE. . . . . . . . .  134 144 153                                                                              
+      109   STORE-TOTALS . . . . . . . . .  M185 M187 M189 M191 M193 M195 236                                                        
+      108   STORE-TOTALS1                                                                                                            
+       91   SW-EOF . . . . . . . . . . . .  M121 126 M181                                                                            
+       74   TOTALS-REPORT. . . . . . . . .  20 119 130                                                                               
+       79   TOTALS-RPT . . . . . . . . . .  204 M205 206 213 M214 215 222 M223 224 M226 237 M240 241 M243 250 M252 259 M261          
+                                            267 M268 269 M270 277 M278 279 291 M294 295 300                                          
+       87   TR-AMOUNT. . . . . . . . . . .  M200 M212 M221 M236 M247 M256 M265 M276 M290 M299                                        
+       86   TR-AMOUNT-HEADING. . . . . . .  M202 M210 M219 M228 M274 M283                                                            
+       84   TR-COUNT . . . . . . . . . . .  M199 M211 M220 M232 M234 M275 M286 M288                                                  
+       83   TR-COUNT-HEADING . . . . . . .  M201 M209 M218 M230 M273 M282                                                            
+       81   TR-HEADING . . . . . . . . . .  M198 M208 M217 M227 M238 M244 M253 M262 M272 M281 M292 M297                              
+       88   TR-PERCENT-SIGN. . . . . . . .  M248 M257 M266                                                                           
+      101   WS-CASH-COUNT. . . . . . . . .  M174 245                                                                                 
+      104   WS-CHEQUE-COUNT                                                                                                          
+      106   WS-COUNTER . . . . . . . . . .  M229 229 231 234 236 M284 284 285 288 290                                                
+      103   WS-CREDIT-COUNT. . . . . . . .  M176 254                                                                                 
+      102   WS-DEBIT-COUNT . . . . . . . .  M178 263                                                                                 
+       97   WS-L-COUNT . . . . . . . . . .  M146 220                                                                                 
+       98   WS-L-TOTAL-AMT . . . . . . . .  M149 221                                                                                 
+       99   WS-R-COUNT . . . . . . . . . .  M155 275                                                                                 
+      100   WS-R-TOTAL-AMT . . . . . . . .  M156 276 298                                                                             
+      105   WS-RECORD-COUNT. . . . . . . .  M135 M147 245 254 263                                                                    
+       93   WS-S-AND-L-COUNT . . . . . . .  M137 M145 199                                                                            
+       94   WS-S-AND-L-TOTAL-AMT . . . . .  M139 M148 200 298                                                                        
+       95   WS-S-COUNT . . . . . . . . . .  M138 211                                                                                 
+       96   WS-S-TOTAL-AMT . . . . . . . .  M140 212                                                                                 
+      107   WS-TEMP-FOR-CALC . . . . . . .  M246 247 M249 M255 256 M258 M264 265                                                     
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               SPLIT     Date 12/11/2019  Time 17:49:34   Page    10                
+0Context usage is indicated by the letter preceding a procedure-name reference.                                                      
+ These letters and their meanings are:                                                                                               
+     A = ALTER (procedure-name)                                                                                                      
+     D = GO TO (procedure-name) DEPENDING ON                                                                                         
+     E = End of range of (PERFORM) through (procedure-name)                                                                          
+     G = GO TO (procedure-name)                                                                                                      
+     P = PERFORM (procedure-name)                                                                                                    
+     T = (ALTER) TO PROCEED TO (procedure-name)                                                                                      
+     U = USE FOR DEBUGGING (procedure-name)                                                                                          
+                                                                                                                                     
+  Defined   Cross-reference of procedures   References                                                                               
+                                                                                                                                     
+      117   000-MAIN                                                                                                                 
+      133   100-PROCESS-FILE . . . . . . .  P126                                                                                     
+      183   150-PROCESS-STORE-TOTAL. . . .  P143 P152                                                                                
+      197   200-PRINT-TOTALS . . . . . . .  P129                                                                                     
+1PP 5655-S71 IBM Enterprise COBOL for z/OS  4.2.0               SPLIT     Date 12/11/2019  Time 17:49:34   Page    11                
+0 Defined   Cross-reference of programs     References                                                                               
+                                                                                                                                     
+       12   SPLIT. . . . . . . . . . . . .  301                                                                                      
+-* Statistics for COBOL program SPLIT:                                                                                               
+ *    Source records = 301                                                                                                           
+ *    Data Division statements = 43                                                                                                  
+ *    Procedure Division statements = 146                                                                                            
+0End of compilation 1,  program SPLIT,  no statements flagged.                                                                       
+0Return code 0                                                                                                                       
+1z/OS V2 R3 BINDER     17:49:36 WEDNESDAY DECEMBER 11, 2019                                                              
+ BATCH EMULATOR  JOB(KC03G36A) STEP(COBOL   ) PGM= IEWBLINK  PROCEDURE(LKED    )                                         
+ IEW2322I 1220  1                                                                                                        
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                 *** O P E R A T I O N   S U M M A R Y   R E P O R T ***                                 
+                                                                                                                         
+1PROCESSING OPTIONS:                                                                                                     
+                                                                                                                         
+    ALIASES             NO                                                                                               
+    ALIGN2              NO                                                                                               
+    AMODE               UNSPECIFIED                                                                                      
+    CALL                YES                                                                                              
+    CASE                UPPER                                                                                            
+    COMPAT              UNSPECIFIED                                                                                      
+    COMPRESS            AUTO                                                                                             
+    DCBS                NO                                                                                               
+    DYNAM               NO                                                                                               
+    EXTATTR             UNSPECIFIED                                                                                      
+    EXITS:              NONE                                                                                             
+    FILL                NONE                                                                                             
+    GID                 UNSPECIFIED                                                                                      
+    HOBSET              NO                                                                                               
+    INFO                NO                                                                                               
+    LET                 04                                                                                               
+    LINECT              060                                                                                              
+    LIST                SUMMARY                                                                                          
+    LISTPRIV            NO                                                                                               
+    LONGPARM            NO                                                                                               
+    MAP                 NO                                                                                               
+    MAXBLK              032760                                                                                           
+    MODMAP              NO                                                                                               
+    MSGLEVEL            00                                                                                               
+    OVLY                NO                                                                                               
+    PRINT               YES                                                                                              
+    RES                 NO                                                                                               
+    REUSABILITY         UNSPECIFIED                                                                                      
+    RMODE               UNSPECIFIED                                                                                      
+    RMODEX              NO                                                                                               
+    SIGN                NO                                                                                               
+    STORENX             NOREPLACE                                                                                        
+    STRIPCL             NO                                                                                               
+    STRIPSEC            NO                                                                                               
+    SYMTRACE                                                                                                             
+    TERM                NO                                                                                               
+    TRAP                ON                                                                                               
+    UID                 UNSPECIFIED                                                                                      
+    UPCASE              NO                                                                                               
+    WKSPACE             000000K,000000K                                                                                  
+    XCAL                NO                                                                                               
+    XREF                NO                                                                                               
+    ***END OF OPTIONS***                                                                                                 
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+1SAVE OPERATION SUMMARY:                                                                                                 
+                                                                                                                         
+    MEMBER NAME         F2SPLIT                                                                                          
+    LOAD LIBRARY        KC03G36.COBOL.LOADLIB                                                                            
+    PROGRAM TYPE        PROGRAM OBJECT(FORMAT 2)                                                                         
+    VOLUME SERIAL       KCTR25                                                                                           
+    DISPOSITION         REPLACED                                                                                         
+    TIME OF SAVE        17.49.36  DEC 11, 2019                                                                           
+                                                                                                                         
+                                                                                                                         
+1SAVE MODULE ATTRIBUTES:                                                                                                 
+                                                                                                                         
+    AC                  000                                                                                              
+    AMODE                31                                                                                              
+    COMPRESSION         NONE                                                                                             
+    DC                  NO                                                                                               
+    EDITABLE            YES                                                                                              
+    EXCEEDS 16MB        NO                                                                                               
+    EXECUTABLE          YES                                                                                              
+    LONGPARM            NO                                                                                               
+    MIGRATABLE          YES                                                                                              
+    OL                  NO                                                                                               
+    OVLY                NO                                                                                               
+    PACK,PRIME          NO,NO                                                                                            
+    PAGE ALIGN          NO                                                                                               
+    REFR                NO                                                                                               
+    RENT                NO                                                                                               
+    REUS                NO                                                                                               
+    RMODE               ANY                                                                                              
+    SCTR                NO                                                                                               
+    SIGN                NO                                                                                               
+    SSI                                                                                                                  
+    SYM GENERATED       NO                                                                                               
+    TEST                NO                                                                                               
+    XPLINK              NO                                                                                               
+    MODULE SIZE (HEX)   00007C58                                                                                         
+    DASD SIZE (HEX)     0000D000                                                                                         
+                                                                                                                         
+                                                                                                                         
+1 ENTRY POINT AND ALIAS SUMMARY:                                                                                         
+                                                                                                                         
+  NAME:            ENTRY TYPE AMODE C_OFFSET CLASS NAME        STATUS                                                    
+                                                                                                                         
+  SPLIT             MAIN_EP      31 00000000 B_TEXT                                                                      
+                                                                                                                         
+                          *** E N D   O F   O P E R A T I O N   S U M M A R Y   R E P O R T ***                          
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+1z/OS V2 R3 BINDER     17:49:36 WEDNESDAY DECEMBER 11, 2019                                                              
+ BATCH EMULATOR  JOB(KC03G36A) STEP(COBOL   ) PGM= IEWBLINK  PROCEDURE(LKED    )                                         
+ IEW2008I 0F03 PROCESSING COMPLETED.  RETURN CODE =  0.                                                                  
+                                                                                                                         
+                                                                                                                         
+                                                                                                                         
+1----------------------                                                                                                  
+ MESSAGE SUMMARY REPORT                                                                                                  
+ ----------------------                                                                                                  
+  TERMINAL MESSAGES      (SEVERITY = 16)                                                                                 
+  NONE                                                                                                                   
+                                                                                                                         
+  SEVERE MESSAGES        (SEVERITY = 12)                                                                                 
+  NONE                                                                                                                   
+                                                                                                                         
+  ERROR MESSAGES         (SEVERITY = 08)                                                                                 
+  NONE                                                                                                                   
+                                                                                                                         
+  WARNING MESSAGES       (SEVERITY = 04)                                                                                 
+  NONE                                                                                                                   
+                                                                                                                         
+  INFORMATIONAL MESSAGES (SEVERITY = 00)                                                                                 
+  2008  2322                                                                                                             
+                                                                                                                         
+                                                                                                                         
+  **** END OF MESSAGE SUMMARY REPORT ****                                                                                
+                                                                                                                         
